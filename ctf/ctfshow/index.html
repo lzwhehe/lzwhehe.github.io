@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>ctfshow | My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.147.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lzwhehe.github.io/ctf/ctfshow/">
+    
+
+    <meta property="og:url" content="https://lzwhehe.github.io/ctf/ctfshow/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="ctfshow">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="ctf">
+    <meta property="article:published_time" content="2025-04-29T20:24:16+09:00">
+    <meta property="article:modified_time" content="2025-04-29T20:24:16+09:00">
+
+  <meta itemprop="name" content="ctfshow">
+  <meta itemprop="datePublished" content="2025-04-29T20:24:16+09:00">
+  <meta itemprop="dateModified" content="2025-04-29T20:24:16+09:00">
+  <meta itemprop="wordCount" content="17">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ctfshow">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Ctfs
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">ctfshow</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-04-29T20:24:16+09:00">April 29, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="web1">web1</h1>
+<p>查看源码</p>
+<h1 id="web2">web2</h1>
+<p><img src="attachment:9938a74b-c017-4448-a926-87ffaa0915c9:image.png" alt="image.png"></p>
+<p>利用view-source协议查看源代码，拿到flag。</p>
+<p>ctrl + u</p>
+<h1 id="web3">web3</h1>
+<p>使用burpsuit, 看看查看下response包就行</p>
+<p><img src="attachment:06e5514a-4a84-4550-87bb-6469bd25a281:image.png" alt="image.png"></p>
+<h1 id="web4">web4</h1>
+<p>常见信息泄露：robots.txt(机器人)，即访问url/robots.txt
+Robots协议：简单来说，标记哪些资源是可以被搜索引擎爬取的，哪些不能被检索到</p>
+<p><img src="attachment:d5ef54bb-35d3-497a-95f9-5ae621a1ddc8:image.png" alt="image.png"></p>
+<h1 id="web5">web5</h1>
+<p>phps泄露，访问url/index.phps</p>
+<p><img src="attachment:37b22995-bcb4-42d2-bb9a-de01c29aa0ad:image.png" alt="image.png"></p>
+<h1 id="web6">web6</h1>
+<p>url/www.zip有源代码,里面给了flag的位置，去访问url/fl000g.txt</p>
+<p><img src="attachment:64f85122-38f4-44b4-94f9-e9c7d7f3e71a:image.png" alt="image.png"></p><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://lzwhehe.github.io/" >
+    &copy;  My New Hugo Site 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
