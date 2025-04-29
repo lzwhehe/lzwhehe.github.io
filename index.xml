@@ -2,17 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>My New Hugo Site</title>
-    <link>http://localhost:1313/</link>
+    <link>https://lzwhehe.github.io/</link>
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 29 Apr 2025 19:22:55 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lzwhehe.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test</title>
-      <link>http://localhost:1313/posts/test/</link>
+      <link>https://lzwhehe.github.io/posts/test2/</link>
       <pubDate>Tue, 29 Apr 2025 19:22:55 +0900</pubDate>
-      <guid>http://localhost:1313/posts/test/</guid>
+      <guid>https://lzwhehe.github.io/posts/test2/</guid>
+      <description>&lt;h1 id=&#34;lzwhehe&#34;&gt;lzwhehe&lt;/h1&gt;&#xA;&lt;p&gt;sdasdasdasd&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ctfshow</title>
+      <link>https://lzwhehe.github.io/posts/ctfshow-msg/</link>
+      <pubDate>Tue, 29 Apr 2025 08:47:11 +0100</pubDate>
+      <guid>https://lzwhehe.github.io/posts/ctfshow-msg/</guid>
+      <description>&lt;h1 id=&#34;web1&#34;&gt;web1&lt;/h1&gt;&#xA;&lt;p&gt;查看源码&lt;/p&gt;&#xA;&lt;h1 id=&#34;web2&#34;&gt;web2&lt;/h1&gt;&#xA;&lt;p&gt;利用view-source协议查看源代码，拿到flag。&#xA;ctrl + u&#xA;&lt;img src=&#34;https://img2024.cnblogs.com/blog/2472549/202504/2472549-20250422151323379-2145517127.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;web3&#34;&gt;web3&lt;/h1&gt;&#xA;&lt;p&gt;使用burpsuit, 看看查看下response包就行&#xA;&lt;img src=&#34;https://img2024.cnblogs.com/blog/2472549/202504/2472549-20250422151342753-310885332.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;web4&#34;&gt;web4&lt;/h1&gt;&#xA;&lt;p&gt;常见信息泄露：robots.txt(机器人)，即访问url/robots.txt&#xA;Robots协议：简单来说，标记哪些资源是可以被搜索引擎爬取的，哪些不能被检索到&#xA;&lt;img src=&#34;https://img2024.cnblogs.com/blog/2472549/202504/2472549-20250422151354419-1767174068.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;web5&#34;&gt;web5&lt;/h1&gt;&#xA;&lt;p&gt;phps泄露，访问url/index.phps&#xA;&lt;img src=&#34;https://img2024.cnblogs.com/blog/2472549/202504/2472549-20250422151411242-28844067.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;web6&#34;&gt;web6&lt;/h1&gt;&#xA;&lt;p&gt;url/www.zip有源代码,里面给了flag的位置，去访问url/fl000g.txt&#xA;&lt;img src=&#34;https://img2024.cnblogs.com/blog/2472549/202504/2472549-20250422151425991-1721331736.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;web7&#34;&gt;web7&lt;/h1&gt;&#xA;&lt;p&gt;.git泄露，访问url/.git/&lt;/p&gt;&#xA;&lt;h1 id=&#34;web8&#34;&gt;web8&lt;/h1&gt;&#xA;&lt;p&gt;svn泄露，访问url/.svn/&lt;/p&gt;&#xA;&lt;h1 id=&#34;web9&#34;&gt;web9&lt;/h1&gt;&#xA;&lt;p&gt;swp，访问url/&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;swp是vim编辑器的临时交换文件，即swap（交换分区）的简写。是一个隐藏文件。用来备份缓冲区的内容，如果未对文件进行修改，是不会产生swp文件的。&#xA;如果不想产生交换文件，所以在vim配置中添加set noswapfile&#xA;所以当异常退出的时候，swp文件就会留下了，此时就可以通过缓存文件来恢复原始文件内容&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;以index.php为例，第一次产生的为.index.php.swp&#xA;第二次意外退出后产生的为 .index.php.swoo&#xA;第三次为 .index.php.swn&#xA;注意后.在开头，因为是隐藏文件&lt;/p&gt;&#xA;&lt;h1 id=&#34;web10&#34;&gt;web10&lt;/h1&gt;&#xA;&lt;p&gt;cookie藏了flag&lt;/p&gt;&#xA;&lt;h1 id=&#34;web11&#34;&gt;web11&lt;/h1&gt;&#xA;&lt;p&gt;藏在域名的txt记录中，可以使用nslookup，也可以使用阿里云的解析。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nslookup -qt=txt ctfshow.com&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;web12&#34;&gt;web12&lt;/h1&gt;&#xA;&lt;p&gt;robots得到用户名，然后url/admin为登录窗口，下拉找到电话为密码&lt;/p&gt;&#xA;&lt;h1 id=&#34;web13&#34;&gt;web13&lt;/h1&gt;&#xA;&lt;p&gt;下拉找到decoment，即可看到地址，用户名，密码&lt;/p&gt;&#xA;&lt;h1 id=&#34;web14&#34;&gt;web14&lt;/h1&gt;&#xA;&lt;p&gt;泄漏editor信息&#xA;访问url/editor&lt;/p&gt;&#xA;&lt;h1 id=&#34;web15&#34;&gt;web15&lt;/h1&gt;&#xA;&lt;p&gt;访问url/admin/，密保问题为所在地在哪个城市，根据QQ号可知在西安，即可得到密码&lt;/p&gt;&#xA;&lt;h1 id=&#34;web16&#34;&gt;web16&lt;/h1&gt;&#xA;&lt;p&gt;探针，考察PHP探针php探针是用来探测空间、服务器运行状况和PHP信息用的，探针可以实时查看服务器硬盘资源、内存占用、网卡 流量、系统负载、服务器时间等信息。&#xA;访问url/tz.php&lt;/p&gt;&#xA;&lt;h1 id=&#34;web17&#34;&gt;web17&lt;/h1&gt;&#xA;&lt;p&gt;题目提示sql备份文件泄漏&lt;/p&gt;&#xA;&lt;h1 id=&#34;web18&#34;&gt;web18&lt;/h1&gt;&#xA;&lt;p&gt;js的Flappy_js.js里发现unicode编码，解码访问得到信息110.php即可&lt;/p&gt;&#xA;&lt;h1 id=&#34;web19&#34;&gt;web19&lt;/h1&gt;&#xA;&lt;p&gt;源代码写了账号密码，直接post传参&lt;/p&gt;&#xA;&lt;h1 id=&#34;web20&#34;&gt;web20&lt;/h1&gt;&#xA;&lt;p&gt;mdb文件是早期asp+access构架的数据库文件&#xA;于是根据百度访问/db/db.mdb，下载之后直接搜ctfshow&#xA;因此可以得出常见的信息泄露&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;信息泄露总结&#34;&gt;信息泄露总结&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;信息泄露，实际上就是对常见的，在搭建网站时的，一些包含信息的文件进行说明，这一部分的话，实际上没有一些逻辑思考，更多的是考察对这些文件的了解程度，当然在更加困难的ctf问题时，会运用到这些知识，作为获得信息的来源&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;常见的包含信息的文件&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;robots.txt&lt;/li&gt;&#xA;&lt;li&gt;phps&lt;/li&gt;&#xA;&lt;li&gt;www.zip&lt;/li&gt;&#xA;&lt;li&gt;.git&lt;/li&gt;&#xA;&lt;li&gt;.svn&lt;/li&gt;&#xA;&lt;li&gt;swp等临时文件泄漏&lt;/li&gt;&#xA;&lt;li&gt;tz.php探针&lt;/li&gt;&#xA;&lt;li&gt;DNS解析&lt;/li&gt;&#xA;&lt;li&gt;备份文件&lt;/li&gt;&#xA;&lt;li&gt;.hg源码泄漏&lt;/li&gt;&#xA;&lt;li&gt;.DS_store 泄漏&lt;/li&gt;&#xA;&lt;li&gt;.~&lt;/li&gt;&#xA;&lt;li&gt;.bak&lt;/li&gt;&#xA;&lt;li&gt;.bash_history&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://lzwhehe.github.io/posts/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://lzwhehe.github.io/posts/test/</guid>
       <description></description>
     </item>
   </channel>

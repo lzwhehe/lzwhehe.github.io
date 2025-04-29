@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>ctfshow | My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="web1
+查看源码
+web2
+利用view-source协议查看源代码，拿到flag。
+ctrl &#43; u
+
+web3
+使用burpsuit, 看看查看下response包就行
+
+web4
+常见信息泄露：robots.txt(机器人)，即访问url/robots.txt
+Robots协议：简单来说，标记哪些资源是可以被搜索引擎爬取的，哪些不能被检索到
+
+web5
+phps泄露，访问url/index.phps
+
+web6
+url/www.zip有源代码,里面给了flag的位置，去访问url/fl000g.txt
+
+web7
+.git泄露，访问url/.git/
+web8
+svn泄露，访问url/.svn/
+web9
+swp，访问url/
+
+swp是vim编辑器的临时交换文件，即swap（交换分区）的简写。是一个隐藏文件。用来备份缓冲区的内容，如果未对文件进行修改，是不会产生swp文件的。
+如果不想产生交换文件，所以在vim配置中添加set noswapfile
+所以当异常退出的时候，swp文件就会留下了，此时就可以通过缓存文件来恢复原始文件内容
+以index.php为例，第一次产生的为.index.php.swp
+第二次意外退出后产生的为 .index.php.swoo
+第三次为 .index.php.swn
+注意后.在开头，因为是隐藏文件
+web10
+cookie藏了flag
+web11
+藏在域名的txt记录中，可以使用nslookup，也可以使用阿里云的解析。
+nslookup -qt=txt ctfshow.com
+web12
+robots得到用户名，然后url/admin为登录窗口，下拉找到电话为密码
+web13
+下拉找到decoment，即可看到地址，用户名，密码
+web14
+泄漏editor信息
+访问url/editor
+web15
+访问url/admin/，密保问题为所在地在哪个城市，根据QQ号可知在西安，即可得到密码
+web16
+探针，考察PHP探针php探针是用来探测空间、服务器运行状况和PHP信息用的，探针可以实时查看服务器硬盘资源、内存占用、网卡 流量、系统负载、服务器时间等信息。
+访问url/tz.php
+web17
+题目提示sql备份文件泄漏
+web18
+js的Flappy_js.js里发现unicode编码，解码访问得到信息110.php即可
+web19
+源代码写了账号密码，直接post传参
+web20
+mdb文件是早期asp&#43;access构架的数据库文件
+于是根据百度访问/db/db.mdb，下载之后直接搜ctfshow
+因此可以得出常见的信息泄露
+
+信息泄露总结
+
+信息泄露，实际上就是对常见的，在搭建网站时的，一些包含信息的文件进行说明，这一部分的话，实际上没有一些逻辑思考，更多的是考察对这些文件的了解程度，当然在更加困难的ctf问题时，会运用到这些知识，作为获得信息的来源
+常见的包含信息的文件
+
+robots.txt
+phps
+www.zip
+.git
+.svn
+swp等临时文件泄漏
+tz.php探针
+DNS解析
+备份文件
+.hg源码泄漏
+.DS_store 泄漏
+.~
+.bak
+.bash_history
+">
+    <meta name="generator" content="Hugo 0.147.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lzwhehe.github.io/posts/ctfshow-msg/">
+    
+
+    <meta property="og:url" content="https://lzwhehe.github.io/posts/ctfshow-msg/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="ctfshow">
+  <meta property="og:description" content="web1 查看源码
+web2 利用view-source协议查看源代码，拿到flag。 ctrl &#43; u web3 使用burpsuit, 看看查看下response包就行 web4 常见信息泄露：robots.txt(机器人)，即访问url/robots.txt Robots协议：简单来说，标记哪些资源是可以被搜索引擎爬取的，哪些不能被检索到 web5 phps泄露，访问url/index.phps web6 url/www.zip有源代码,里面给了flag的位置，去访问url/fl000g.txt web7 .git泄露，访问url/.git/
+web8 svn泄露，访问url/.svn/
+web9 swp，访问url/
+swp是vim编辑器的临时交换文件，即swap（交换分区）的简写。是一个隐藏文件。用来备份缓冲区的内容，如果未对文件进行修改，是不会产生swp文件的。 如果不想产生交换文件，所以在vim配置中添加set noswapfile 所以当异常退出的时候，swp文件就会留下了，此时就可以通过缓存文件来恢复原始文件内容
+以index.php为例，第一次产生的为.index.php.swp 第二次意外退出后产生的为 .index.php.swoo 第三次为 .index.php.swn 注意后.在开头，因为是隐藏文件
+web10 cookie藏了flag
+web11 藏在域名的txt记录中，可以使用nslookup，也可以使用阿里云的解析。
+nslookup -qt=txt ctfshow.com web12 robots得到用户名，然后url/admin为登录窗口，下拉找到电话为密码
+web13 下拉找到decoment，即可看到地址，用户名，密码
+web14 泄漏editor信息 访问url/editor
+web15 访问url/admin/，密保问题为所在地在哪个城市，根据QQ号可知在西安，即可得到密码
+web16 探针，考察PHP探针php探针是用来探测空间、服务器运行状况和PHP信息用的，探针可以实时查看服务器硬盘资源、内存占用、网卡 流量、系统负载、服务器时间等信息。 访问url/tz.php
+web17 题目提示sql备份文件泄漏
+web18 js的Flappy_js.js里发现unicode编码，解码访问得到信息110.php即可
+web19 源代码写了账号密码，直接post传参
+web20 mdb文件是早期asp&#43;access构架的数据库文件 于是根据百度访问/db/db.mdb，下载之后直接搜ctfshow 因此可以得出常见的信息泄露
+信息泄露总结 信息泄露，实际上就是对常见的，在搭建网站时的，一些包含信息的文件进行说明，这一部分的话，实际上没有一些逻辑思考，更多的是考察对这些文件的了解程度，当然在更加困难的ctf问题时，会运用到这些知识，作为获得信息的来源
+常见的包含信息的文件
+robots.txt phps www.zip .git .svn swp等临时文件泄漏 tz.php探针 DNS解析 备份文件 .hg源码泄漏 .DS_store 泄漏 .~ .bak .bash_history">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-04-29T08:47:11+01:00">
+    <meta property="article:modified_time" content="2025-04-29T08:47:11+01:00">
+
+  <meta itemprop="name" content="ctfshow">
+  <meta itemprop="description" content="web1 查看源码
+web2 利用view-source协议查看源代码，拿到flag。 ctrl &#43; u web3 使用burpsuit, 看看查看下response包就行 web4 常见信息泄露：robots.txt(机器人)，即访问url/robots.txt Robots协议：简单来说，标记哪些资源是可以被搜索引擎爬取的，哪些不能被检索到 web5 phps泄露，访问url/index.phps web6 url/www.zip有源代码,里面给了flag的位置，去访问url/fl000g.txt web7 .git泄露，访问url/.git/
+web8 svn泄露，访问url/.svn/
+web9 swp，访问url/
+swp是vim编辑器的临时交换文件，即swap（交换分区）的简写。是一个隐藏文件。用来备份缓冲区的内容，如果未对文件进行修改，是不会产生swp文件的。 如果不想产生交换文件，所以在vim配置中添加set noswapfile 所以当异常退出的时候，swp文件就会留下了，此时就可以通过缓存文件来恢复原始文件内容
+以index.php为例，第一次产生的为.index.php.swp 第二次意外退出后产生的为 .index.php.swoo 第三次为 .index.php.swn 注意后.在开头，因为是隐藏文件
+web10 cookie藏了flag
+web11 藏在域名的txt记录中，可以使用nslookup，也可以使用阿里云的解析。
+nslookup -qt=txt ctfshow.com web12 robots得到用户名，然后url/admin为登录窗口，下拉找到电话为密码
+web13 下拉找到decoment，即可看到地址，用户名，密码
+web14 泄漏editor信息 访问url/editor
+web15 访问url/admin/，密保问题为所在地在哪个城市，根据QQ号可知在西安，即可得到密码
+web16 探针，考察PHP探针php探针是用来探测空间、服务器运行状况和PHP信息用的，探针可以实时查看服务器硬盘资源、内存占用、网卡 流量、系统负载、服务器时间等信息。 访问url/tz.php
+web17 题目提示sql备份文件泄漏
+web18 js的Flappy_js.js里发现unicode编码，解码访问得到信息110.php即可
+web19 源代码写了账号密码，直接post传参
+web20 mdb文件是早期asp&#43;access构架的数据库文件 于是根据百度访问/db/db.mdb，下载之后直接搜ctfshow 因此可以得出常见的信息泄露
+信息泄露总结 信息泄露，实际上就是对常见的，在搭建网站时的，一些包含信息的文件进行说明，这一部分的话，实际上没有一些逻辑思考，更多的是考察对这些文件的了解程度，当然在更加困难的ctf问题时，会运用到这些知识，作为获得信息的来源
+常见的包含信息的文件
+robots.txt phps www.zip .git .svn swp等临时文件泄漏 tz.php探针 DNS解析 备份文件 .hg源码泄漏 .DS_store 泄漏 .~ .bak .bash_history">
+  <meta itemprop="datePublished" content="2025-04-29T08:47:11+01:00">
+  <meta itemprop="dateModified" content="2025-04-29T08:47:11+01:00">
+  <meta itemprop="wordCount" content="81">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ctfshow">
+  <meta name="twitter:description" content="web1 查看源码
+web2 利用view-source协议查看源代码，拿到flag。 ctrl &#43; u web3 使用burpsuit, 看看查看下response包就行 web4 常见信息泄露：robots.txt(机器人)，即访问url/robots.txt Robots协议：简单来说，标记哪些资源是可以被搜索引擎爬取的，哪些不能被检索到 web5 phps泄露，访问url/index.phps web6 url/www.zip有源代码,里面给了flag的位置，去访问url/fl000g.txt web7 .git泄露，访问url/.git/
+web8 svn泄露，访问url/.svn/
+web9 swp，访问url/
+swp是vim编辑器的临时交换文件，即swap（交换分区）的简写。是一个隐藏文件。用来备份缓冲区的内容，如果未对文件进行修改，是不会产生swp文件的。 如果不想产生交换文件，所以在vim配置中添加set noswapfile 所以当异常退出的时候，swp文件就会留下了，此时就可以通过缓存文件来恢复原始文件内容
+以index.php为例，第一次产生的为.index.php.swp 第二次意外退出后产生的为 .index.php.swoo 第三次为 .index.php.swn 注意后.在开头，因为是隐藏文件
+web10 cookie藏了flag
+web11 藏在域名的txt记录中，可以使用nslookup，也可以使用阿里云的解析。
+nslookup -qt=txt ctfshow.com web12 robots得到用户名，然后url/admin为登录窗口，下拉找到电话为密码
+web13 下拉找到decoment，即可看到地址，用户名，密码
+web14 泄漏editor信息 访问url/editor
+web15 访问url/admin/，密保问题为所在地在哪个城市，根据QQ号可知在西安，即可得到密码
+web16 探针，考察PHP探针php探针是用来探测空间、服务器运行状况和PHP信息用的，探针可以实时查看服务器硬盘资源、内存占用、网卡 流量、系统负载、服务器时间等信息。 访问url/tz.php
+web17 题目提示sql备份文件泄漏
+web18 js的Flappy_js.js里发现unicode编码，解码访问得到信息110.php即可
+web19 源代码写了账号密码，直接post传参
+web20 mdb文件是早期asp&#43;access构架的数据库文件 于是根据百度访问/db/db.mdb，下载之后直接搜ctfshow 因此可以得出常见的信息泄露
+信息泄露总结 信息泄露，实际上就是对常见的，在搭建网站时的，一些包含信息的文件进行说明，这一部分的话，实际上没有一些逻辑思考，更多的是考察对这些文件的了解程度，当然在更加困难的ctf问题时，会运用到这些知识，作为获得信息的来源
+常见的包含信息的文件
+robots.txt phps www.zip .git .svn swp等临时文件泄漏 tz.php探针 DNS解析 备份文件 .hg源码泄漏 .DS_store 泄漏 .~ .bak .bash_history">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">ctfshow</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-04-29T08:47:11+01:00">April 29, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="web1">web1</h1>
+<p>查看源码</p>
+<h1 id="web2">web2</h1>
+<p>利用view-source协议查看源代码，拿到flag。
+ctrl + u
+<img src="https://img2024.cnblogs.com/blog/2472549/202504/2472549-20250422151323379-2145517127.png" alt="image"></p>
+<h1 id="web3">web3</h1>
+<p>使用burpsuit, 看看查看下response包就行
+<img src="https://img2024.cnblogs.com/blog/2472549/202504/2472549-20250422151342753-310885332.png" alt="image"></p>
+<h1 id="web4">web4</h1>
+<p>常见信息泄露：robots.txt(机器人)，即访问url/robots.txt
+Robots协议：简单来说，标记哪些资源是可以被搜索引擎爬取的，哪些不能被检索到
+<img src="https://img2024.cnblogs.com/blog/2472549/202504/2472549-20250422151354419-1767174068.png" alt="image"></p>
+<h1 id="web5">web5</h1>
+<p>phps泄露，访问url/index.phps
+<img src="https://img2024.cnblogs.com/blog/2472549/202504/2472549-20250422151411242-28844067.png" alt="image"></p>
+<h1 id="web6">web6</h1>
+<p>url/www.zip有源代码,里面给了flag的位置，去访问url/fl000g.txt
+<img src="https://img2024.cnblogs.com/blog/2472549/202504/2472549-20250422151425991-1721331736.png" alt="image"></p>
+<h1 id="web7">web7</h1>
+<p>.git泄露，访问url/.git/</p>
+<h1 id="web8">web8</h1>
+<p>svn泄露，访问url/.svn/</p>
+<h1 id="web9">web9</h1>
+<p>swp，访问url/</p>
+<blockquote>
+<p>swp是vim编辑器的临时交换文件，即swap（交换分区）的简写。是一个隐藏文件。用来备份缓冲区的内容，如果未对文件进行修改，是不会产生swp文件的。
+如果不想产生交换文件，所以在vim配置中添加set noswapfile
+所以当异常退出的时候，swp文件就会留下了，此时就可以通过缓存文件来恢复原始文件内容</p></blockquote>
+<p>以index.php为例，第一次产生的为.index.php.swp
+第二次意外退出后产生的为 .index.php.swoo
+第三次为 .index.php.swn
+注意后.在开头，因为是隐藏文件</p>
+<h1 id="web10">web10</h1>
+<p>cookie藏了flag</p>
+<h1 id="web11">web11</h1>
+<p>藏在域名的txt记录中，可以使用nslookup，也可以使用阿里云的解析。</p>
+<pre tabindex="0"><code>nslookup -qt=txt ctfshow.com
+</code></pre><h1 id="web12">web12</h1>
+<p>robots得到用户名，然后url/admin为登录窗口，下拉找到电话为密码</p>
+<h1 id="web13">web13</h1>
+<p>下拉找到decoment，即可看到地址，用户名，密码</p>
+<h1 id="web14">web14</h1>
+<p>泄漏editor信息
+访问url/editor</p>
+<h1 id="web15">web15</h1>
+<p>访问url/admin/，密保问题为所在地在哪个城市，根据QQ号可知在西安，即可得到密码</p>
+<h1 id="web16">web16</h1>
+<p>探针，考察PHP探针php探针是用来探测空间、服务器运行状况和PHP信息用的，探针可以实时查看服务器硬盘资源、内存占用、网卡 流量、系统负载、服务器时间等信息。
+访问url/tz.php</p>
+<h1 id="web17">web17</h1>
+<p>题目提示sql备份文件泄漏</p>
+<h1 id="web18">web18</h1>
+<p>js的Flappy_js.js里发现unicode编码，解码访问得到信息110.php即可</p>
+<h1 id="web19">web19</h1>
+<p>源代码写了账号密码，直接post传参</p>
+<h1 id="web20">web20</h1>
+<p>mdb文件是早期asp+access构架的数据库文件
+于是根据百度访问/db/db.mdb，下载之后直接搜ctfshow
+因此可以得出常见的信息泄露</p>
+<hr>
+<h1 id="信息泄露总结">信息泄露总结</h1>
+<blockquote>
+<p>信息泄露，实际上就是对常见的，在搭建网站时的，一些包含信息的文件进行说明，这一部分的话，实际上没有一些逻辑思考，更多的是考察对这些文件的了解程度，当然在更加困难的ctf问题时，会运用到这些知识，作为获得信息的来源</p></blockquote>
+<p><strong>常见的包含信息的文件</strong></p>
+<ul>
+<li>robots.txt</li>
+<li>phps</li>
+<li>www.zip</li>
+<li>.git</li>
+<li>.svn</li>
+<li>swp等临时文件泄漏</li>
+<li>tz.php探针</li>
+<li>DNS解析</li>
+<li>备份文件</li>
+<li>.hg源码泄漏</li>
+<li>.DS_store 泄漏</li>
+<li>.~</li>
+<li>.bak</li>
+<li>.bash_history</li>
+</ul>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://lzwhehe.github.io/" >
+    &copy;  My New Hugo Site 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
